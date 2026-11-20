@@ -1,11 +1,33 @@
 {
   "schemaVersion": 4,
   "distributionBackend": "tos",
+  "phase": "FROZEN",
+  "version": "6.5.3-beta.2",
   "channel": "zjys",
   "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
-  "version": "6.5.3-beta.2",
-  "phase": "PREPARING",
-  "mode": "formal",
-  "verification": "not-run",
-  "assets": []
+  "artifactCandidateId": "65a51d4a65f5d482ccd17232e6caab203f1b68e035b95519d94b69ad1af80d67",
+  "binarySourceCommit": "8d55928b8b6dbadc9e96f5aa5f0e1021f48e56fb",
+  "releaseMetadataCommit": "b257640a554ab1eb469a5162f72f77051e68d0d0",
+  "uploadInventorySha256": "b8629fcd4e3678fc9238b791548390e79d7d9befc14c5056fa512eb870ff35c9",
+  "channelInventorySha256": "09d9754fac60cfd8b4c1035ccc34cdaccf695290cc247d822ee104cd769523c6",
+  "assets": [
+    {
+      "name": "ZJ_YSAdSDK.xcframework.zip",
+      "size": 3270279,
+      "sha256": "5d6a7200b36703d9df12324cf0d8eb2a5560f8390882417940a354bd2c2f28c7",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/ZJ_YSAdSDK.xcframework.zip"
+    },
+    {
+      "name": "ZJ_YSAdSDK-6.5.3-beta.2.zip",
+      "size": 3317303,
+      "sha256": "f32ecd7ba2d228826daf99cec8809115f89cc67092fe49a793b5d391c44a0f6f",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/ZJ_YSAdSDK-6.5.3-beta.2.zip"
+    },
+    {
+      "name": "checksums.txt",
+      "size": 295,
+      "sha256": "f743366716bec0d94ce3acf6c449e1c0c5d9a95625a2f8e9615aa49c4286f10a",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/checksums.txt"
+    }
+  ]
 }
