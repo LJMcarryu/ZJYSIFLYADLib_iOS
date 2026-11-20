@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
   "distributionBackend": "tos",
-  "phase": "FROZEN",
+  "phase": "CLOSED",
   "version": "6.5.3-beta.2",
   "channel": "zjys",
   "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
@@ -29,5 +29,8 @@
       "sha256": "f743366716bec0d94ce3acf6c449e1c0c5d9a95625a2f8e9615aa49c4286f10a",
       "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/checksums.txt"
     }
-  ]
+  ],
+  "distributionRevisionId": "601e2645d730dca036a88f9fd388d5a6f9fefb6d7d72fa9b5db4c5377042a0b8",
+  "verifyReceiptSha256": "9353e900c7570badeb847583d21178ca34040015e4a8583be03ceb36858b3274",
+  "tagCommit": "dd707a91118d0901a6792b30c07d01aab7680965"
 }
