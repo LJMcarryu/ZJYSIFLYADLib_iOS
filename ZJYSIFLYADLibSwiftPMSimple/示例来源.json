@@ -1,0 +1,7 @@
+{
+  "sdkVersion": "6.5.3-beta.2",
+  "sdkTagCommit": "dd707a91118d0901a6792b30c07d01aab7680965",
+  "demoSourceCommit": "1acbe0bd9613e2e8618d7f8eb4d4793e3d6051f5",
+  "demoSourceDirectory": "ZJ_YSAdSDKSimple",
+  "integration": "swiftpm"
+}

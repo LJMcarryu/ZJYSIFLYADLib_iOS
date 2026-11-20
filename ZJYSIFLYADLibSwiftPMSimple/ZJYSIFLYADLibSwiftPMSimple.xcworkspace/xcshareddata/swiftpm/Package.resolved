@@ -1,0 +1,15 @@
+{
+  "originHash" : "4e6c0a0838d5987cd009747b8d8735b644632d26cd55688d634bc70c5995077c",
+  "pins" : [
+    {
+      "identity" : "zjysiflyadlib_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS.git",
+      "state" : {
+        "revision" : "dd707a91118d0901a6792b30c07d01aab7680965",
+        "version" : "6.5.3-beta.2"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -4,6 +4,16 @@
 
 本仓提供 `6.5.3-beta.2` 预发布版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
 
+## 三种接入示例
+
+| 接入方式 | 独立示例 | 首次准备 |
+| --- | --- | --- |
+| CocoaPods | [ZJ_YSAdSDKSimple](ZJ_YSAdSDKSimple/README.md) | 在示例目录运行 `pod install` |
+| SwiftPM | [ZJYSIFLYADLibSwiftPMSimple](ZJYSIFLYADLibSwiftPMSimple/README.md) | 直接打开示例 workspace，Xcode 解析远程包 |
+| 手动集成 | [ZJYSIFLYADLibManualSimple](ZJYSIFLYADLibManualSimple/README.md) | 运行示例内 `准备SDK.py`，再打开 workspace |
+
+各示例固定的 SDK 版本与运行步骤以其 README 为准。一次只选择一种集成方式。
+
 ## 接入入口
 
 - [完整接入指南](docs/接入指南/README.md)
