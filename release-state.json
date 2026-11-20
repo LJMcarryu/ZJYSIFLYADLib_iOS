@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 4,
+  "distributionBackend": "tos",
+  "channel": "zjys",
+  "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
+  "version": "6.5.3-beta.2",
+  "phase": "PREPARING",
+  "mode": "formal",
+  "verification": "not-run",
+  "assets": []
+}

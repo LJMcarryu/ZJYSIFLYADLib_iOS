@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
+  "channel": "zjys",
+  "requiredRootFiles": [
+    "README.md",
+    "CHANGELOG.md",
+    "RELEASING.md",
+    "LICENSE",
+    "SECURITY.md",
+    ".gitignore",
+    "release-state.json",
+    "Package.swift",
+    "ZJ_YSAdSDK.podspec"
+  ],
+  "package": {
+    "manifest": "Package.swift",
+    "podspec": "ZJ_YSAdSDK.podspec"
+  },
+  "demo": {
+    "root": "ZJ_YSAdSDKSimple",
+    "readme": "ZJ_YSAdSDKSimple/README.md",
+    "podfile": "ZJ_YSAdSDKSimple/Podfile",
+    "project": "ZJ_YSAdSDKSimple/ZJ_YSAdSDKSimple.xcodeproj",
+    "scheme": "ZJ_YSAdSDKSimple"
+  },
+  "docs": {
+    "index": "docs/接入指南/README.md",
+    "guideRoot": "docs/接入指南",
+    "releaseHistory": "docs/需求设计/发布验收/历史发布记录.md",
+    "guides": [
+      "安装与资源配置.md",
+      "广告加载与展示.md",
+      "竞价接入.md",
+      "错误处理与反馈.md",
+      "隐私与网络.md"
+    ]
+  },
+  "github": {
+    "workflow": ".github/workflows/ci.yml",
+    "pullRequestTemplate": ".github/PULL_REQUEST_TEMPLATE.md",
+    "issueConfig": ".github/ISSUE_TEMPLATE/config.yml",
+    "bugTemplate": ".github/ISSUE_TEMPLATE/bug_report.yml"
+  },
+  "firstRelease": {
+    "version": "6.5.3-beta.2",
+    "phase": "PREPARING"
+  }
+}

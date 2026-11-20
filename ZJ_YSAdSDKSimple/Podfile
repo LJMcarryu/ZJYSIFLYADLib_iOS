@@ -1,0 +1,10 @@
+
+source 'https://cdn.cocoapods.org/'
+platform :ios, '11.0'
+
+
+
+target 'ZJ_YSAdSDKSimple' do
+  use_frameworks!
+  pod 'ZJ_YSAdSDK', '6.5.3-beta.2'
+end
