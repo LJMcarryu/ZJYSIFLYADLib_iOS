@@ -18,4 +18,4 @@
 
 升级或迁移时替换旧 SDK 与资源包，勿同时链接旧 SDK。SwiftPM 与手动集成需在 App target 添加 `-ObjC`；手动集成同时复制 `ZJ_YSAdSDK.bundle`。
 
-<!-- ifly-release-status: {"version": "6.5.3-beta.2", "status": "CANDIDATE", "distribution": "tos", "releaseUrl": null} -->
+<!-- ifly-release-status: {"version": "6.5.3-beta.2", "status": "FORMAL", "distribution": "tos", "releaseUrl": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/release-record.json"} -->
