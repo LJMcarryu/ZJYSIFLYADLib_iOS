@@ -4,7 +4,7 @@
 
 ## 报告方式
 
-- 一般接入问题：通过[接入指南](https://download-adsdk.voiceads.cn/ys/index.html)提供版本、环境、复现步骤和脱敏日志。
+- 一般接入问题：通过[接入指南](docs/接入指南/README.md)提供版本、环境、复现步骤和脱敏日志。
 - 潜在安全问题：请通过[讯飞安全应急响应中心](https://security.iflysec.com/front/bugForm)私密上报；提交内容只保留复现所需信息，不要公开凭据、用户数据或完整请求。
 
 ## 报告内容

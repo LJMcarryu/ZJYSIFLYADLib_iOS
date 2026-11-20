@@ -82,7 +82,7 @@ def read(root, relative):
     return path.read_text()
 
 
-def verify(root: Path, version: str | None = None, *, metadata_only=False, allow_pending=False):
+def verify(root: Path, version: str | None = None, *, metadata_only=False, allow_pending=False, initial_projection=False):
     root = root.absolute()
     contract = json.loads(read(root, "repository-contract.json"))
     state = json.loads(read(root, "release-state.json"))
@@ -95,15 +95,18 @@ def verify(root: Path, version: str | None = None, *, metadata_only=False, allow
     for path in contract["requiredRootFiles"]:
         read(root, path)
     base = f"{BASE}/{version}/{channel}"
-    if state.get("phase") == "PREPARING":
+    if state.get("phase") == "PREPARING" and (allow_pending or not metadata_only):
         expected_marker = verify_initial_release(state, contract, version)
+        if initial_projection:
+            if not metadata_only or not allow_pending:
+                raise ValueError("首发文档投影仅用于冻结库存驱动的元数据同步预检")
+            expected_marker = {"version": version, "status": "FORMAL", "distribution": "tos",
+                "releaseUrl": base + "/release-record.json"}
         for name in ("README.md", "CHANGELOG.md", "RELEASING.md"):
             text = read(root, name)
             markers = re.findall(r"<!--\s*ifly-release-status:\s*(\{.*?\})\s*-->", text, re.S)
             if len(markers) != 1 or json.loads(markers[0]) != expected_marker:
                 raise ValueError(f"{name} 首发准备标记不一致")
-        if metadata_only and not allow_pending:
-            raise ValueError("首发准备状态不能用作正式冻结元数据证据")
         return {"status": "success", "channel": channel, "version": version,
             "distributionBackend": "tos", "metadata": "pending", "verification": "not-run"}
     fast = (state.get("schemaVersion") == 5 and state.get("phase") == "FAST_PUBLISHED"

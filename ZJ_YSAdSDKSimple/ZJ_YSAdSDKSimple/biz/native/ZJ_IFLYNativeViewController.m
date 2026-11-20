@@ -3,17 +3,17 @@
 #import "ZJ_IFLYADUtil.h"
 #import <ZJ_YSAdSDK/ZJ_YSAdSDK.h>
 
-static NSInteger const YSNativeFeedDemoAdRow = 4;
-static NSInteger const YSNativeFeedDemoRowCount = 16;
-static NSString *const YSNativeFeedDemoContentCellIdentifier = @"ys-native-feed-content";
-static NSString *const YSNativeFeedDemoAdCellIdentifier = @"ys-native-feed-ad";
-static NSString *const YSNativeFeedDemoAdItemIdentifier = @"ys-native-feed-stable-ad-item";
+static NSInteger const ZJ_NativeFeedDemoAdRow = 4;
+static NSInteger const ZJ_NativeFeedDemoRowCount = 16;
+static NSString *const ZJ_NativeFeedDemoContentCellIdentifier = @"zj-native-feed-content";
+static NSString *const ZJ_NativeFeedDemoAdCellIdentifier = @"zj-native-feed-ad";
+static NSString *const ZJ_NativeFeedDemoAdItemIdentifier = @"zj-native-feed-stable-ad-item";
 
-typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable failureReason);
+typedef void (^ZJ_NativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable failureReason);
 
 /// 列表数据层中的逻辑广告条目。stableIdentifier 不随 Cell 复用变化；媒体只持有 Ad，
 /// 数据层持有同一广告对象，使条目离屏后仍可恢复展示。
-@interface YSNativeFeedDemoItem : NSObject
+@interface ZJ_NativeFeedDemoItem : NSObject
 
 @property (nonatomic, copy) NSString *stableIdentifier;
 @property (nonatomic, strong, nullable) ZJ_IFLYNativeFeedAd *ad;
@@ -23,7 +23,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 
 @end
 
-@implementation YSNativeFeedDemoItem
+@implementation ZJ_NativeFeedDemoItem
 
 - (instancetype)initWithStableIdentifier:(NSString *)stableIdentifier {
     self = [super init];
@@ -37,16 +37,16 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 
 /// 可复用的广告 Cell。Cell 只负责渲染 UI、生成 Binder，并在离屏/复用时按容器反注册；
 /// Cell 负责当前容器的渲染、挂载和解绑。
-@interface YSNativeFeedDemoTableViewCell : UITableViewCell
+@interface ZJ_NativeFeedDemoTableViewCell : UITableViewCell
 
-- (void)renderAd:(ZJ_IFLYNativeFeedAd *)ad completion:(YSNativeFeedDemoRenderCompletion)completion;
+- (void)renderAd:(ZJ_IFLYNativeFeedAd *)ad completion:(ZJ_NativeFeedDemoRenderCompletion)completion;
 - (ZJ_IFLYNativeFeedAdViewBinder *)viewBinderForAd:(ZJ_IFLYNativeFeedAd *)ad;
 - (void)detachAdFromContainer;
 - (void)updateVideoMessage:(NSString *)message visible:(BOOL)visible;
 
 @end
 
-@interface YSNativeFeedDemoTableViewCell ()
+@interface ZJ_NativeFeedDemoTableViewCell ()
 
 @property (nonatomic, assign) NSUInteger renderGeneration;
 @property (nonatomic, strong) UIView *adContainer;
@@ -62,12 +62,12 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 @end
 
 
-@implementation YSNativeFeedDemoTableViewCell
+@implementation ZJ_NativeFeedDemoTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self ys_demoConfigureCell];
+        [self zj_demoConfigureCell];
     }
     return self;
 }
@@ -75,12 +75,12 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        [self ys_demoConfigureCell];
+        [self zj_demoConfigureCell];
     }
     return self;
 }
 
-- (void)ys_demoConfigureCell {
+- (void)zj_demoConfigureCell {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = UIColor.whiteColor;
 
@@ -164,7 +164,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     self.descLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     [self.adContainer addSubview:self.descLabel];
 
-    [self ys_demoResetCard];
+    [self zj_demoResetCard];
 }
 
 - (void)layoutSubviews {
@@ -216,7 +216,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     self.descLabel.frame = CGRectMake(descX, rowY, MAX(0, descRight - gap - descX), rowHeight);
 }
 
-- (void)renderAd:(ZJ_IFLYNativeFeedAd *)ad completion:(YSNativeFeedDemoRenderCompletion)completion {
+- (void)renderAd:(ZJ_IFLYNativeFeedAd *)ad completion:(ZJ_NativeFeedDemoRenderCompletion)completion {
     // 可见行 reload 可能不会先触发 prepareForReuse。必须在改写媒体子视图前按容器反注册，
     // 避免上一条广告的手势、曝光或播放器继续作用于新 UI。
     [self detachAdFromContainer];
@@ -231,7 +231,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
         return;
     }
 
-    BOOL clickable = [self ys_demoIsClickableData:data];
+    BOOL clickable = [self zj_demoIsClickableData:data];
     self.adBadgeLabel.hidden = NO;
     self.adBadgeLabel.text = data.adSourceMark.length > 0 ? data.adSourceMark : @"广告";
     self.closeButton.hidden = NO;
@@ -340,7 +340,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     ZJ_IFLYNativeFeedAdData *data = ad.adData;
     BOOL video = data.materialType == ZJ_IFLYNativeFeedAdMaterialTypeVideo;
     BOOL multipleImages = data.materialType == ZJ_IFLYNativeFeedAdMaterialTypeMultipleImages;
-    BOOL clickable = [self ys_demoIsClickableData:data];
+    BOOL clickable = [self zj_demoIsClickableData:data];
 
     NSMutableArray<UIView *> *mediaViews = [NSMutableArray array];
     if (video) {
@@ -383,7 +383,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 - (void)detachAdFromContainer {
     self.renderGeneration += 1;
     [ZJ_IFLYNativeFeedAd zj_detachAdFromContainerView:self.adContainer];
-    [self ys_demoResetVisuals];
+    [self zj_demoResetVisuals];
 }
 
 - (void)prepareForReuse {
@@ -396,17 +396,17 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     self.placeholderLabel.hidden = !visible;
 }
 
-- (BOOL)ys_demoIsClickableData:(ZJ_IFLYNativeFeedAdData *)data {
+- (BOOL)zj_demoIsClickableData:(ZJ_IFLYNativeFeedAdData *)data {
     return data.interactionType == ZJ_IFLYNativeFeedAdInteractionTypeRedirect ||
            data.interactionType == ZJ_IFLYNativeFeedAdInteractionTypeDownload;
 }
 
-- (void)ys_demoResetCard {
+- (void)zj_demoResetCard {
     self.renderGeneration += 1;
-    [self ys_demoResetVisuals];
+    [self zj_demoResetVisuals];
 }
 
-- (void)ys_demoResetVisuals {
+- (void)zj_demoResetVisuals {
     // 视频展示由容器级 detach 清理；媒体同时清理自己的图片和文案。
     self.videoView.hidden = NO;
     self.placeholderLabel.hidden = NO;
@@ -436,14 +436,14 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 @property (nonatomic, strong) UISegmentedControl *slotControl;
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) UITextView *logView;
-@property (nonatomic, strong) YSNativeFeedDemoItem *adItem;
+@property (nonatomic, strong) ZJ_NativeFeedDemoItem *adItem;
 @property (nonatomic, assign) NSUInteger loadGeneration;
-@property (nonatomic, weak, nullable) YSNativeFeedDemoTableViewCell *visibleAdCell;
-@property (nonatomic, weak, nullable) YSNativeFeedDemoTableViewCell *attachedAdCell;
+@property (nonatomic, weak, nullable) ZJ_NativeFeedDemoTableViewCell *visibleAdCell;
+@property (nonatomic, weak, nullable) ZJ_NativeFeedDemoTableViewCell *attachedAdCell;
 @property (nonatomic, copy, nullable) NSString *visibleAdItemIdentifier;
 
 - (void)startLoadingAdItem;
-- (BOOL)attachCurrentAdToCell:(YSNativeFeedDemoTableViewCell *)cell;
+- (BOOL)attachCurrentAdToCell:(ZJ_NativeFeedDemoTableViewCell *)cell;
 - (void)continueDisplayingAdItemAfterCellDetached;
 - (void)retireCurrentAdItem;
 
@@ -456,7 +456,7 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     [super viewDidLoad];
     self.title = @"信息流列表复用";
     self.view.backgroundColor = UIColor.whiteColor;
-    self.adItem = [[YSNativeFeedDemoItem alloc] initWithStableIdentifier:YSNativeFeedDemoAdItemIdentifier];
+    self.adItem = [[ZJ_NativeFeedDemoItem alloc] initWithStableIdentifier:ZJ_NativeFeedDemoAdItemIdentifier];
     [self setupUI];
     [self log:@"列表复用：数据层持有广告，Cell 离屏时解绑，回屏后重新挂载同一广告"];
 }
@@ -487,9 +487,9 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 64;
     [self.tableView registerClass:UITableViewCell.class
-           forCellReuseIdentifier:YSNativeFeedDemoContentCellIdentifier];
-    [self.tableView registerClass:YSNativeFeedDemoTableViewCell.class
-           forCellReuseIdentifier:YSNativeFeedDemoAdCellIdentifier];
+           forCellReuseIdentifier:ZJ_NativeFeedDemoContentCellIdentifier];
+    [self.tableView registerClass:ZJ_NativeFeedDemoTableViewCell.class
+           forCellReuseIdentifier:ZJ_NativeFeedDemoAdCellIdentifier];
     [self.view addSubview:self.tableView];
 
     CGFloat margin = 16;
@@ -547,16 +547,16 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return YSNativeFeedDemoRowCount;
+    return ZJ_NativeFeedDemoRowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == YSNativeFeedDemoAdRow) {
-        return [tableView dequeueReusableCellWithIdentifier:YSNativeFeedDemoAdCellIdentifier
+    if (indexPath.row == ZJ_NativeFeedDemoAdRow) {
+        return [tableView dequeueReusableCellWithIdentifier:ZJ_NativeFeedDemoAdCellIdentifier
                                                forIndexPath:indexPath];
     }
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:YSNativeFeedDemoContentCellIdentifier
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZJ_NativeFeedDemoContentCellIdentifier
                                                             forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"内容行 %ld", (long)indexPath.row + 1];
     cell.textLabel.textColor = [ZJ_IFLYADUtil demoSecondaryLabelColor];
@@ -567,18 +567,18 @@ typedef void (^YSNativeFeedDemoRenderCompletion)(BOOL ready, NSString *_Nullable
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.row == YSNativeFeedDemoAdRow ? 250 : 64;
+    return indexPath.row == ZJ_NativeFeedDemoAdRow ? 250 : 64;
 }
 
 - (void)tableView:(UITableView *)tableView
  willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row != YSNativeFeedDemoAdRow ||
-        ![cell isKindOfClass:YSNativeFeedDemoTableViewCell.class]) {
+    if (indexPath.row != ZJ_NativeFeedDemoAdRow ||
+        ![cell isKindOfClass:ZJ_NativeFeedDemoTableViewCell.class]) {
         return;
     }
 
-    YSNativeFeedDemoTableViewCell *adCell = (YSNativeFeedDemoTableViewCell *)cell;
+    ZJ_NativeFeedDemoTableViewCell *adCell = (ZJ_NativeFeedDemoTableViewCell *)cell;
     self.visibleAdCell = adCell;
     self.visibleAdItemIdentifier = self.adItem.stableIdentifier;
 
@@ -597,11 +597,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView
 didEndDisplayingCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![cell isKindOfClass:YSNativeFeedDemoTableViewCell.class]) {
+    if (![cell isKindOfClass:ZJ_NativeFeedDemoTableViewCell.class]) {
         return;
     }
 
-    YSNativeFeedDemoTableViewCell *adCell = (YSNativeFeedDemoTableViewCell *)cell;
+    ZJ_NativeFeedDemoTableViewCell *adCell = (ZJ_NativeFeedDemoTableViewCell *)cell;
     [adCell detachAdFromContainer];
     if (self.attachedAdCell == adCell) {
         self.attachedAdCell = nil;
@@ -643,8 +643,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [ad zj_loadAdWithRequestConfig:[ZJ_IFLYADUtil mediaSampleRequestConfig]];
 }
 
-- (BOOL)attachCurrentAdToCell:(YSNativeFeedDemoTableViewCell *)cell {
-    YSNativeFeedDemoItem *item = self.adItem;
+- (BOOL)attachCurrentAdToCell:(ZJ_NativeFeedDemoTableViewCell *)cell {
+    ZJ_NativeFeedDemoItem *item = self.adItem;
     ZJ_IFLYNativeFeedAd *ad = item.ad;
     if (!cell || !ad || !ad.adData) {
         return NO;
@@ -721,8 +721,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)continueDisplayingAdItemAfterCellDetached {
-    YSNativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
-    YSNativeFeedDemoItem *item = self.adItem;
+    ZJ_NativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
+    ZJ_NativeFeedDemoItem *item = self.adItem;
     if (!visibleCell || !item.ad || !item.ad.adData ||
         ![self.visibleAdItemIdentifier isEqualToString:item.stableIdentifier]) {
         return;
@@ -740,8 +740,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     self.adItem.generation = self.loadGeneration;
     self.adItem.ad = nil;
 
-    YSNativeFeedDemoTableViewCell *attachedCell = self.attachedAdCell;
-    YSNativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
+    ZJ_NativeFeedDemoTableViewCell *attachedCell = self.attachedAdCell;
+    ZJ_NativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
     self.attachedAdCell = nil;
     if (attachedCell) {
         [attachedCell detachAdFromContainer];
@@ -776,7 +776,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
                                          (long)ad.materialType,
                                          [ZJ_IFLYADUtil bidInfoSummaryForAd:ad]]];
     [self updateStatus:@"广告已加载，等待广告 Cell" color:[ZJ_IFLYADUtil demoIndigoColor]];
-    YSNativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
+    ZJ_NativeFeedDemoTableViewCell *visibleCell = self.visibleAdCell;
     if (visibleCell) {
         [self attachCurrentAdToCell:visibleCell];
     }

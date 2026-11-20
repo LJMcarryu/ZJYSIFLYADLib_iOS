@@ -16,7 +16,7 @@
 #endif
 
 #ifndef __OPTIMIZE__
-    #define ZJ_IFLYSampleLogInfo(module, fmt, ...)  NSLog(@"[YSAdSample] [%@] " fmt, module, ##__VA_ARGS__)
+    #define ZJ_IFLYSampleLogInfo(module, fmt, ...)  NSLog(@"[ZJ_YSAdSample] [%@] " fmt, module, ##__VA_ARGS__)
 #else
     #define ZJ_IFLYSampleLogInfo(...)  {}
 #endif

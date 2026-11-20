@@ -1,6 +1,6 @@
 # ZJ 萤石广告接入示例
 
-> 本示例遵循公开仓 Demo 契约：固定 SDK 版本、独立 Podfile、可复现运行说明和脱敏问题反馈。
+> 当前 `6.5.3-beta.2` 为首发候选，尚未发布；以下安装运行步骤供发布后使用。
 本工程使用 `ZJ_YSAdSDK 6.5.3-beta.2`，演示开屏、插屏和自渲染信息流，支持信息流列表复用及视频素材。SDK 不包含激励广告。
 
 先按本文运行和替换广告位；将能力接入自己的 App 时，参考[SDK 接入说明](../README.md)与各页面代码。
@@ -44,7 +44,7 @@ open ZJ_YSAdSDKSimple.xcworkspace
 | `__TYPED_MORE_NATIVE_AD_UNIT_ID__` | 自渲染信息流 / 多图 |
 | `__FEED_VIDEO_AD_UNIT_ID__` | 自渲染信息流 / 视频 |
 
-公共请求参数在 [`ZJ_IFLYADUtil.m`](ZJ_YSAdSDKSimple/Supporting%20Files/ZJ_IFLYADUtil.m) 的 `mediaSampleRequestConfig` 中：示例超时为 5 秒，`settleType = @1`、`bidFloor = @0.01`、`interactStatus = @1`。这些是演示值，业务接入请按平台约定调整，勿将示例价格作为正式结算配置。App 名称与版本从宿主信息读取。
+公共请求参数在 [`ZJ_IFLYADUtil.m`](ZJ_YSAdSDKSimple/Supporting%20Files/ZJ_IFLYADUtil.m) 的 `mediaSampleRequestConfig` 中：示例超时为 5 秒，`settleType = @1`、`bidFloor = @0.01`、`interactStatus = @1`。这些是演示值，业务接入请按平台约定调整，勿将示例价格作为正式结算配置。
 
 SDK 不要求额外 App ID 初始化。广告位须与媒体获授权的 App 和广告形式匹配。启动配置见 [`AppDelegate.m`](ZJ_YSAdSDKSimple/AppDelegate.m)，首页入口见 [`ViewController.m`](ZJ_YSAdSDKSimple/ViewController.m)。
 
@@ -73,9 +73,9 @@ SDK 不要求额外 App ID 初始化。广告位须与媒体获授权的 App 和
 
 构建成功、展示成功和线上有填充是不同层面的结果，可依次检查：
 
-1. **安装与启动**：`pod install` 成功，workspace 构建通过，App 首页显示的 SDK 版本与本示例 `Podfile` 固定版本一致，并有四种广告入口。
+1. **安装与启动**：`pod install` 成功，workspace 构建通过，App 首页显示的 SDK 版本与本示例 `Podfile` 固定版本一致，并有三种广告入口。
 2. **内置渲染**：加载后看到 `DidLoad`，随后 `DidReady`；点击 `Show` 后广告可见，日志有展示/曝光回调；关闭后页面可继续操作。
-3. **自渲染**：有 `nativeFeedAdDidLoad`，素材显示且挂载成功，进入有效可见状态后收到曝光回调；视频素材在曝光后按播放策略播放。
+3. **自渲染**：有 `zj_nativeFeedAdDidLoad:`，素材显示且挂载成功，进入有效可见状态后收到曝光回调；视频素材在曝光后按播放策略播放。
 4. **列表复用**：广告离屏再回屏能恢复；同一逻辑广告不重复触发曝光回调。换一条后旧图片或旧回调不应覆盖新广告。
 5. **交互与退出**：真机验证可点击素材的点击、跳转、返回；退出页面后不再展示该页广告。网络失败或无填充时应显示错误并允许主动重试。
 
@@ -94,6 +94,6 @@ SDK 不要求额外 App ID 初始化。广告位须与媒体获授权的 App 和
 | 信息流挂载失败 | 查看错误码和描述，检查主线程、素材完整性、容器布局及视频 `videoView`；完整规则见[信息流接入指南](../docs/接入指南/广告加载与展示.md#自渲染信息流) |
 | 信息流回屏为空 | 确认数据层仍持同一个 Ad，离屏只按具体容器 detach；如果已过期，释放旧对象后请求新广告 |
 | IDFA 为空 | 检查 ATT 状态；拒绝/未决定时为空是预期行为，授权后在新请求中重新读取 |
-| 视频/图标缺失 | 核对 App 中存在一份 `ZJ_YSAdSDK.bundle`，并检查素材下载错误；不要重复拷贝资源或重复接入不同 YS 包 |
+| 视频/图标缺失 | 核对 App 中存在一份 `ZJ_YSAdSDK.bundle`，并检查素材下载错误；不要重复拷贝资源或重复接入不同渠道 SDK |
 
 先查[错误处理与反馈](../docs/接入指南/错误处理与反馈.md)；仍需帮助时通过双方约定的支持渠道反馈，附 SDK/iOS/Xcode 版本、真机或模拟器、页面与操作顺序、错误码和脱敏后的日志。版本变化见[更新记录](../CHANGELOG.md)。
