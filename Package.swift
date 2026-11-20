@@ -18,7 +18,7 @@ let package = Package(
         .binaryTarget(
             name: "ZJ_YSAdSDK",
             url: "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/ZJ_YSAdSDK.xcframework.zip",
-            checksum: "PENDING_ZJYS_6_5_3_BETA_2"
+            checksum: "5d6a7200b36703d9df12324cf0d8eb2a5560f8390882417940a354bd2c2f28c7"
         ),
         .target(
             name: "ZJ_YSAdSDKResources",
