@@ -379,7 +379,7 @@
 			repositoryURL = "https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS.git";
 			requirement = {
 				kind = exactVersion;
-				version = "6.5.3-beta.2";
+				version = "6.5.3";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

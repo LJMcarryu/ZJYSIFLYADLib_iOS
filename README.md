@@ -9,7 +9,7 @@
 
 提供开屏、插屏和自渲染信息流，支持图片与视频素材，最低 iOS 11.0。
 
-本仓提供 `6.5.3-beta.2` 预发布版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
+本仓提供 `6.5.3` 版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
 
 ## 三种接入示例
 

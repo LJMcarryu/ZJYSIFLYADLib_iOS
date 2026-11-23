@@ -1,6 +1,6 @@
 # ZJ 萤石广告接入示例
 
-> 本示例适用于 `6.5.3-beta.2` 预发布版本，发布状态以仓库根目录的 `release-state.json` 和版本 Tag 为准。
+> 本示例适用于已发布的 `6.5.3` 版本。本次快速发布尚未完成安装、构建与广告展示复验，发布状态以仓库根目录的 `release-state.json` 和版本 Tag 为准。
 本工程使用 `ZJ_YSAdSDK 6.5.3`，演示开屏、插屏和自渲染信息流，支持信息流列表复用及视频素材。SDK 不包含激励广告。
 
 先按本文运行和替换广告位；将能力接入自己的 App 时，参考[SDK 接入说明](../README.md)与各页面代码。
@@ -9,9 +9,9 @@
 
 ## 下载入口与版本
 
-无需 Git 时，可下载 [GitHub main 分支源码 ZIP](https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS/archive/refs/heads/main.zip)，解压后进入 `ZJYSIFLYADLib_iOS-main/ZJ_YSAdSDKSimple/`，再执行下方安装命令。不要只下载 `.xcodeproj`。使用 Git 的命令见下文；已有副本先确认本页与 Podfile 都固定 SDK `6.5.3-beta.2`。
+无需 Git 时，可下载 [GitHub main 分支源码 ZIP](https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS/archive/refs/heads/main.zip)，解压后进入 `ZJYSIFLYADLib_iOS-main/ZJ_YSAdSDKSimple/`，再执行下方安装命令。不要只下载 `.xcodeproj`。使用 Git 的命令见下文；已有副本先确认本页与 Podfile 都固定 SDK `6.5.3`。
 
-依赖安装后核对 `Podfile.lock` 中 `ZJ_YSAdSDK` 为 `6.5.3-beta.2`。版本找不到或锁文件冲突的处理见[安装指南](../docs/接入指南/安装与资源配置.md#cocoapods)。
+依赖安装后核对 `Podfile.lock` 中 `ZJ_YSAdSDK` 为 `6.5.3`。版本找不到或锁文件冲突的处理见[安装指南](../docs/接入指南/安装与资源配置.md#cocoapods)。
 
 ## 从下载到运行
 

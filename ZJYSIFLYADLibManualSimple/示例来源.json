@@ -1,6 +1,6 @@
 {
-  "sdkVersion": "6.5.3-beta.2",
-  "sdkTagCommit": "dd707a91118d0901a6792b30c07d01aab7680965",
+  "sdkVersion": "6.5.3",
+  "sdkTagCommit": "da78d5bf95a3fb57742bfbda2ede645e40cd8b5f",
   "demoSourceCommit": "1acbe0bd9613e2e8618d7f8eb4d4793e3d6051f5",
   "demoSourceDirectory": "ZJ_YSAdSDKSimple",
   "integration": "manual",
