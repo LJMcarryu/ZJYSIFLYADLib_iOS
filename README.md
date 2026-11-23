@@ -1,5 +1,12 @@
 # ZJ 萤石广告 SDK
 
+<!-- ifly-fast-release-notice:start -->
+当前版本：`6.5.3`。本版尚未完成安装、构建与广告展示验证，请先在宿主 App 中联调。
+
+<!-- ifly-release-status: {"version":"6.5.3","status":"FAST_UNVERIFIED","distribution":"tos","releaseUrl":"https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/fast-release-record.json"} -->
+
+<!-- ifly-fast-release-notice:end -->
+
 提供开屏、插屏和自渲染信息流，支持图片与视频素材，最低 iOS 11.0。
 
 本仓提供 `6.5.3-beta.2` 预发布版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
@@ -28,4 +35,4 @@
 
 升级或迁移时替换旧 SDK 与资源包，勿同时链接旧 SDK。SwiftPM 与手动集成需在 App target 添加 `-ObjC`；手动集成同时复制 `ZJ_YSAdSDK.bundle`。
 
-<!-- ifly-release-status: {"version": "6.5.3-beta.2", "status": "FORMAL", "distribution": "tos", "releaseUrl": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/release-record.json"} -->
+

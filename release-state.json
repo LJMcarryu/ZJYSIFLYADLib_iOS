@@ -1,36 +1,34 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
+  "mode": "fast",
   "distributionBackend": "tos",
-  "phase": "CLOSED",
-  "version": "6.5.3-beta.2",
+  "phase": "FAST_PUBLISHED",
+  "verification": "not-run",
+  "version": "6.5.3",
   "channel": "zjys",
   "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
-  "artifactCandidateId": "65a51d4a65f5d482ccd17232e6caab203f1b68e035b95519d94b69ad1af80d67",
-  "binarySourceCommit": "8d55928b8b6dbadc9e96f5aa5f0e1021f48e56fb",
-  "releaseMetadataCommit": "b257640a554ab1eb469a5162f72f77051e68d0d0",
-  "uploadInventorySha256": "b8629fcd4e3678fc9238b791548390e79d7d9befc14c5056fa512eb870ff35c9",
-  "channelInventorySha256": "09d9754fac60cfd8b4c1035ccc34cdaccf695290cc247d822ee104cd769523c6",
+  "releaseRecordUrl": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/fast-release-record.json",
   "assets": [
     {
-      "name": "ZJ_YSAdSDK.xcframework.zip",
-      "size": 3270279,
-      "sha256": "5d6a7200b36703d9df12324cf0d8eb2a5560f8390882417940a354bd2c2f28c7",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/ZJ_YSAdSDK.xcframework.zip"
+      "name": "ZJ_YSAdSDK-6.5.3.zip",
+      "size": 3317346,
+      "sha256": "ee3840578056151e19496e9afe3970e73322eeadf4c0f48c3d585bc9ce2c15cf",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK-6.5.3.zip",
+      "key": "ios_sdk/6.5.3/zjys/ZJ_YSAdSDK-6.5.3.zip"
     },
     {
-      "name": "ZJ_YSAdSDK-6.5.3-beta.2.zip",
-      "size": 3317303,
-      "sha256": "f32ecd7ba2d228826daf99cec8809115f89cc67092fe49a793b5d391c44a0f6f",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/ZJ_YSAdSDK-6.5.3-beta.2.zip"
+      "name": "ZJ_YSAdSDK.xcframework.zip",
+      "size": 3270253,
+      "sha256": "ab491a75ba3402c74ec931cb3fcb3f305711e7c1ba6d6bae57ab4502444cdde7",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK.xcframework.zip",
+      "key": "ios_sdk/6.5.3/zjys/ZJ_YSAdSDK.xcframework.zip"
     },
     {
       "name": "checksums.txt",
-      "size": 295,
-      "sha256": "f743366716bec0d94ce3acf6c449e1c0c5d9a95625a2f8e9615aa49c4286f10a",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3-beta.2/zjys/checksums.txt"
+      "size": 288,
+      "sha256": "cf792cb592d024acf94e8fdcbf7a0dc9e697e8424d06a6751ff292b9931f104a",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/checksums.txt",
+      "key": "ios_sdk/6.5.3/zjys/checksums.txt"
     }
-  ],
-  "distributionRevisionId": "601e2645d730dca036a88f9fd388d5a6f9fefb6d7d72fa9b5db4c5377042a0b8",
-  "verifyReceiptSha256": "9353e900c7570badeb847583d21178ca34040015e4a8583be03ceb36858b3274",
-  "tagCommit": "dd707a91118d0901a6792b30c07d01aab7680965"
+  ]
 }
