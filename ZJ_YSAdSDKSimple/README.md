@@ -1,6 +1,5 @@
 # ZJ 萤石广告接入示例
 
-> 本示例适用于已发布的 `6.5.3` 版本。本次快速发布尚未完成安装、构建与广告展示复验，发布状态以仓库根目录的 `release-state.json` 和版本 Tag 为准。
 本工程使用 `ZJ_YSAdSDK 6.5.4`，演示开屏、插屏和自渲染信息流，支持信息流列表复用及视频素材。SDK 不包含激励广告。
 
 先按本文运行和替换广告位；将能力接入自己的 App 时，参考[SDK 接入说明](../README.md)与各页面代码。
@@ -9,13 +8,13 @@
 
 ## 下载入口与版本
 
-无需 Git 时，可下载 [GitHub main 分支源码 ZIP](https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS/archive/refs/heads/main.zip)，解压后进入 `ZJYSIFLYADLib_iOS-main/ZJ_YSAdSDKSimple/`，再执行下方安装命令。不要只下载 `.xcodeproj`。使用 Git 的命令见下文；已有副本先确认本页与 Podfile 都固定 SDK `6.5.3`。
+无需 Git 时，可下载 [GitHub main 分支源码 ZIP](https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS/archive/refs/heads/main.zip)，解压后进入 `ZJYSIFLYADLib_iOS-main/ZJ_YSAdSDKSimple/`，再执行下方安装命令。不要只下载 `.xcodeproj`。使用 Git 的命令见下文；已有副本先确认本页与 Podfile 都固定 SDK `6.5.4`。
 
-依赖安装后核对 `Podfile.lock` 中 `ZJ_YSAdSDK` 为 `6.5.3`。版本找不到或锁文件冲突的处理见[安装指南](../docs/接入指南/安装与资源配置.md#cocoapods)。
+依赖安装后核对 `Podfile.lock` 中 `ZJ_YSAdSDK` 为 `6.5.4`。版本找不到或锁文件冲突的处理见[安装指南](../docs/接入指南/安装与资源配置.md#cocoapods)。
 
 ## 从下载到运行
 
-准备 macOS、Xcode、CocoaPods 和可访问 CocoaPods trunk 和 TOS 下载地址的网络。最低部署目标为 iOS 11.0。使用模拟器可检查安装、链接和页面；真实广告填充、跳转和 ATT 请用真机联调。
+准备 macOS、Xcode、CocoaPods 和可访问 GitHub、CocoaPods 与 TOS 下载地址的网络。最低部署目标为 iOS 11.0。使用模拟器可检查安装、链接和页面；真实广告填充、跳转和 ATT 请用真机联调。
 
 ```bash
 git clone https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS.git
@@ -85,7 +84,7 @@ SDK 不要求额外 App ID 初始化。广告位须与媒体获授权的 App 和
 
 | 现象 | 检查方法 |
 | --- | --- |
-| `pod install` 下载失败 | 确认能访问 CocoaPods trunk 和本版本 TOS 下载地址；保留失败信息后重试，检查代理、证书和网络限制 |
+| `pod install` 下载失败 | 确认能访问 GitHub 与本版本 TOS 下载地址；保留失败信息后重试，检查代理、证书和网络限制 |
 | `No such module` / 找不到头文件 | 确认依赖安装完成，打开的是 workspace，且当前选择 `ZJ_YSAdSDKSimple` scheme |
 | 真机签名失败 | 配置自己的 Team、Bundle Identifier 与设备授权；这类错误发生在运行广告请求之前 |
 | 首页 SDK 版本与 `Podfile` 固定版本不一致 | 核对 `Podfile`、安装输出和 `Pods/Manifest.lock`；清理旧构建后重新从 workspace 运行 |
@@ -97,3 +96,7 @@ SDK 不要求额外 App ID 初始化。广告位须与媒体获授权的 App 和
 | 视频/图标缺失 | 核对 App 中存在一份 `ZJ_YSAdSDK.bundle`，并检查素材下载错误；不要重复拷贝资源或重复接入不同渠道 SDK |
 
 先查[错误处理与反馈](../docs/接入指南/错误处理与反馈.md)；仍需帮助时通过双方约定的支持渠道反馈，附 SDK/iOS/Xcode 版本、真机或模拟器、页面与操作顺序、错误码和脱敏后的日志。版本变化见[更新记录](../CHANGELOG.md)。
+
+## 已验证范围
+
+2026-11-24，固定 SDK `6.5.4`，使用 Xcode 26.2 完成 Debug 的 iOS Simulator arm64 和 iOS 设备 arm64 构建，并核对依赖身份、链接符号、资源及隐私清单。设备架构构建关闭代码签名。未安装或运行 App，未验证广告加载、填充、展示、点击跳转、签名分发、x86_64 或 iOS 11 设备运行。

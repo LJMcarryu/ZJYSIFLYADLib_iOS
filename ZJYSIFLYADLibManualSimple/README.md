@@ -1,6 +1,6 @@
 # Manual 接入示例
 
-此独立示例固定使用 SDK `6.5.3`；仓库当前发布版本另见[根 README](../README.md)。工程包含与本仓 CocoaPods Demo 对应的广告示例页面，应用 Bundle Identifier 独立，可以分别安装对比。示例源码是生成时的独立副本。
+此独立示例固定使用 SDK `6.5.4`；仓库当前发布版本另见[根 README](../README.md)。工程包含与本仓 CocoaPods Demo 对应的广告示例页面，应用 Bundle Identifier 独立，可以分别安装对比。示例源码是生成时的独立副本。
 
 ## 获取示例
 
@@ -43,7 +43,7 @@ xcodebuild -workspace ZJYSIFLYADLibManualSimple.xcworkspace \
 
 ## 已验证范围
 
-本版示例使用 Xcode 26.2 完成 Debug 构建：iOS Simulator 的 arm64 / x86_64，以及 iOS 设备架构的 arm64；同时核对链接符号、同版资源及隐私清单。设备架构构建关闭代码签名，未验证实际设备运行、广告加载、填充或展示。工程声明 iOS 11.0，未据此验证 iOS 11 的运行兼容性。
+2026-11-24，固定 SDK `6.5.4`，使用 Xcode 26.2 完成 Debug 的 iOS Simulator arm64 和 iOS 设备 arm64 构建，并核对依赖身份、链接符号、资源及隐私清单。设备架构构建关闭代码签名。未安装或运行 App，未验证广告加载、填充、展示、点击跳转、签名分发、x86_64 或 iOS 11 设备运行。
 
 ## 版本维护
 
