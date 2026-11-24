@@ -4,31 +4,31 @@
   "distributionBackend": "tos",
   "phase": "FAST_PUBLISHED",
   "verification": "not-run",
-  "version": "6.5.3",
+  "version": "6.5.4",
   "channel": "zjys",
   "repository": "LJMcarryu/ZJYSIFLYADLib_iOS",
-  "releaseRecordUrl": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/fast-release-record.json",
+  "releaseRecordUrl": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/fast-release-record.json",
   "assets": [
     {
-      "name": "ZJ_YSAdSDK-6.5.3.zip",
-      "size": 3317346,
-      "sha256": "ee3840578056151e19496e9afe3970e73322eeadf4c0f48c3d585bc9ce2c15cf",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK-6.5.3.zip",
-      "key": "ios_sdk/6.5.3/zjys/ZJ_YSAdSDK-6.5.3.zip"
+      "name": "ZJ_YSAdSDK-6.5.4.zip",
+      "size": 3330678,
+      "sha256": "f10f60f5f615a2d1c09cb1494c8126323fcd1060de214e4d192e5c83f932a48e",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/ZJ_YSAdSDK-6.5.4.zip",
+      "key": "ios_sdk/6.5.4/zjys/ZJ_YSAdSDK-6.5.4.zip"
     },
     {
       "name": "ZJ_YSAdSDK.xcframework.zip",
-      "size": 3270253,
-      "sha256": "ab491a75ba3402c74ec931cb3fcb3f305711e7c1ba6d6bae57ab4502444cdde7",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK.xcframework.zip",
-      "key": "ios_sdk/6.5.3/zjys/ZJ_YSAdSDK.xcframework.zip"
+      "size": 3277281,
+      "sha256": "28407b0bbd828b30bebc87583d72fbf785e20042f9cd8a282c01d92be48581f7",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/ZJ_YSAdSDK.xcframework.zip",
+      "key": "ios_sdk/6.5.4/zjys/ZJ_YSAdSDK.xcframework.zip"
     },
     {
       "name": "checksums.txt",
       "size": 288,
-      "sha256": "cf792cb592d024acf94e8fdcbf7a0dc9e697e8424d06a6751ff292b9931f104a",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/checksums.txt",
-      "key": "ios_sdk/6.5.3/zjys/checksums.txt"
+      "sha256": "77b4ad3cd4801806138df3f125ad6ca3deba41b0ac733e958fd541b3b451490e",
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/checksums.txt",
+      "key": "ios_sdk/6.5.4/zjys/checksums.txt"
     }
   ]
 }

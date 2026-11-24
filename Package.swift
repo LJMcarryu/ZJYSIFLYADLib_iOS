@@ -7,7 +7,7 @@ import PackageDescription
 
 let package = Package(
     name: "ZJ_YSAdSDK",
-    // 6.5.3 目标二进制继续按 iOS 11 构建；资源由资源 target 同步投递。
+    // 6.5.4 目标二进制继续按 iOS 11 构建；资源由资源 target 同步投递。
     platforms: [
         .iOS("11.0"),
     ],
@@ -17,8 +17,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "ZJ_YSAdSDK",
-            url: "https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK.xcframework.zip",
-            checksum: "ab491a75ba3402c74ec931cb3fcb3f305711e7c1ba6d6bae57ab4502444cdde7"
+            url: "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/ZJ_YSAdSDK.xcframework.zip",
+            checksum: "28407b0bbd828b30bebc87583d72fbf785e20042f9cd8a282c01d92be48581f7"
         ),
         .target(
             name: "ZJ_YSAdSDKResources",

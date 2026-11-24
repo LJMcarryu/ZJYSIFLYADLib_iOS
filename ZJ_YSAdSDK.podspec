@@ -2,11 +2,11 @@
 
 Pod::Spec.new do |s|
   s.name     = 'ZJ_YSAdSDK'
-  s.version  = '6.5.3'
+  s.version  = '6.5.4'
   s.summary  = 'ZJ_YSAdSDK —— ZJ 萤石媒体定制广告 SDK（开屏/插屏/信息流，含视频）。'
   s.homepage = 'https://github.com/LJMcarryu/ZJYSIFLYADLib_iOS'
   s.author   = { 'LJMcarryu' => 'jmliu6@iflytek.com' }
-  s.source   = { :http => 'https://download-adsdk.voiceads.cn/ios_sdk/6.5.3/zjys/ZJ_YSAdSDK-6.5.3.zip' }
+  s.source   = { :http => 'https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/ZJ_YSAdSDK-6.5.4.zip' }
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.platform = :ios, '11.0'
   s.static_framework = true
