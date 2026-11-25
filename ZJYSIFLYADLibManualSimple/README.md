@@ -1,6 +1,6 @@
 # Manual 接入示例
 
-此独立示例固定使用 SDK `6.5.4`；仓库当前发布版本另见[根 README](../README.md)。工程包含与本仓 CocoaPods Demo 对应的广告示例页面，应用 Bundle Identifier 独立，可以分别安装对比。示例源码是生成时的独立副本。
+此独立示例固定使用 SDK `6.5.5`；仓库当前发布版本另见[根 README](../README.md)。工程包含与本仓 CocoaPods Demo 对应的广告示例页面，应用 Bundle Identifier 独立，可以分别安装对比。示例源码是生成时的独立副本。
 
 ## 获取示例
 
@@ -47,4 +47,4 @@ xcodebuild -workspace ZJYSIFLYADLibManualSimple.xcworkspace \
 
 ## 版本维护
 
-此示例不会随仓库当前版本自动升级。更新依赖时同时更新工程、锁文件或资产摘要、同版资源及说明，并重新验证模拟器与设备架构。不得混用不同版本的库与资源。`示例来源.json` 记录本副本的 SDK Tag 和示例源码提交。
+发布时同步此示例的 SDK 依赖。更新依赖时同时更新工程、锁文件或资产摘要、同版资源及说明，并重新验证模拟器与设备架构。不得混用不同版本的库与资源。`示例来源.json` 记录示例源码来源和当前 SDK 依赖。

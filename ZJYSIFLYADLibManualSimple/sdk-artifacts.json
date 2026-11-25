@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "6.5.4",
+  "version": "6.5.5",
   "channel": "zjys",
   "assets": [
     {
       "name": "ZJ_YSAdSDK.xcframework",
-      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/ZJ_YSAdSDK.xcframework.zip",
-      "sha256": "28407b0bbd828b30bebc87583d72fbf785e20042f9cd8a282c01d92be48581f7"
+      "url": "https://download-adsdk.voiceads.cn/ios_sdk/6.5.5/zjys/ZJ_YSAdSDK.xcframework.zip",
+      "sha256": "1bbc004fbd3f68132ecee7ecdfd13f26e69a137c6cebb58b6c40e2d03b4cd379"
     }
   ]
 }

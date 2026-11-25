@@ -1,23 +1,15 @@
 # ZJ 萤石广告 SDK
 
 <!-- ifly-fast-release-notice:start -->
-当前版本：`6.5.4`。本版尚未完成安装、构建与广告展示验证，请先在宿主 App 中联调。
+当前版本：`6.5.5`。本版尚未完成安装、构建与广告展示验证，请先在宿主 App 中联调。
 
-<!-- ifly-release-status: {"version":"6.5.4","status":"FAST_UNVERIFIED","distribution":"tos","releaseUrl":"https://download-adsdk.voiceads.cn/ios_sdk/6.5.4/zjys/fast-release-record.json"} -->
+<!-- ifly-release-status: {"version":"6.5.5","status":"FAST_UNVERIFIED","distribution":"tos","releaseUrl":"https://download-adsdk.voiceads.cn/ios_sdk/6.5.5/zjys/fast-release-record.json"} -->
 
 <!-- ifly-fast-release-notice:end -->
 
 提供开屏、插屏和自渲染信息流，支持图片与视频素材，最低 iOS 11.0。
 
-本仓提供 `6.5.4` 版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
-
-## 升级到 6.5.4
-
-修复自渲染信息流从横屏打开仅竖屏落地页时反复旋转的问题。使用默认方向配置的接入方无需新增适配；升级后请在宿主 App 中核对左右横屏进入落地页、关闭返回和前后台切换。
-
-CocoaPods 固定 `pod 'ZJ_YSAdSDK', '6.5.4'`；SwiftPM 选择 Exact Version `6.5.4`；手动集成替换同版 XCFramework 和资源包。安装后核对实际解析的版本，三种方式选择一种。
-
-本次快速发布未执行安装、构建与广告展示复验；旧系统真机、真实媒体宿主及 Apple 审核仍需分别验证。
+本仓提供 `6.5.5` 版本的接入材料，支持 CocoaPods、SwiftPM 和手动集成。实际发布进度以 `release-state.json` 为准。
 
 ## 三种接入示例
 
